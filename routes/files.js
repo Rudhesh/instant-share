@@ -26,7 +26,7 @@ let upload = multer({
 
 router.post("/", (req, res) => {
   //Validate request
-
+  console.log(req.body);
   //Store file
 
   upload(req, res, async (err) => {
