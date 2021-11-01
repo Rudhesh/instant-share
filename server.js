@@ -23,9 +23,9 @@ app.use("/api/files", files);
 app.use("/files", show);
 app.use("/files/download", download);
 
-// app.get("*", (req, res) => {
-//   res.status(404).send({ msg: "not found" });
-// });
+app.get("*", (req, res) => {
+  res.status(404).send({ msg: "not found" });
+});
 
 const PORT = process.env.PORT || 5000;
 
