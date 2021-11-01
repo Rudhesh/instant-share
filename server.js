@@ -6,13 +6,6 @@ import download from "./routes/download.js";
 import path from "path";
 import cors from "cors";
 
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__filename);
-
-// path.dirname(__filename);
-
-// process.cwd();
-
 const app = express();
 connectDB();
 app.use(express.static("public"));

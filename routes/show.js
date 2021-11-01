@@ -8,7 +8,7 @@ router.get("/:uuid", async (req, res) => {
     const file = await File.findOne({ uuid: req.params.uuid });
     console.log("file :", file);
     if (!file) {
-      return res.render("download", { error: "expire" });
+      return res.render("download", { error: "file is missing" });
     }
     return res.render("download", {
       uuid: file.uuid,

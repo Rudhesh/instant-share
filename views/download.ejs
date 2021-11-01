@@ -9,11 +9,14 @@
 
   <body>
     <section class="download">
-      <h2>Instant Share</h2>
+      <div className="header">
+        <h1>Instant Share</h1>
+        <p>Easy and fast file sharing app.</p>
+      </div>
       <% if(locals.error){ %>
       <h4><%= locals.error %></h4>
       <% } else { %>
-      <h2>Your file is ready to download</h2>
+      <p>Your file is ready to download</p>
 
       <div class="download__meta">
         <small>File size: <%= parseInt(fileSize/1000) %> KB</small>
