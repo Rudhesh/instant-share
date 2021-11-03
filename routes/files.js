@@ -3,7 +3,7 @@ import multer from "multer";
 import File from "../models/file.js";
 import { v4 as uuidv4 } from "uuid";
 import path from "path";
-import sendMail from "../services/emailService.js";
+import sendMail from "../services/aap.js";
 import emailTemplate from "../services/emailTemplate.js";
 
 const router = express.Router();
@@ -59,6 +59,7 @@ router.post("/", (req, res) => {
 
 router.post("/send", async (req, res) => {
   const { uuid, emailTo, emailFrom } = req.body;
+  console.log(emailFrom);
 
   if (!uuid || !emailTo || !emailFrom) {
     return res.status(422).send({ error: "All fields are required" });
@@ -69,7 +70,7 @@ router.post("/send", async (req, res) => {
     return res.status(422).send({ error: "Email already sent" });
   }
 
-  file.sender = emailFrom;
+  file.sender = "twentylightyear@gmail.com";
   file.receiver = emailTo;
   const response = await file.save();
 

@@ -27,7 +27,7 @@ app.get("*", (req, res) => {
   res.status(404).send({ msg: "not found" });
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 6000;
 
 app.listen(PORT, () => {
   console.log(`Listening at http://localhost:${PORT}`);
